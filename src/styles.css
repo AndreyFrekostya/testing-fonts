@@ -1,0 +1,57 @@
+/* Корневой размер шрифта для использования rem */
+html {
+  font-size: 16px; /* Базовый размер шрифта для всего документа */
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.item {
+  width: 450px;
+  border: 1px solid #000;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.item span {
+  position: absolute;
+  bottom: -30px;
+}
+
+.item-0 {
+  font-size: 16px;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+/* Стили для второго блока (используются относительные единицы) */
+.item-1 {
+  font-size: 1em; /* относительно родительского размера шрифта */
+  padding: 1.2em; /* относительно родительского размера шрифта */
+  background-color: lightgreen;
+}
+
+/* Стили для третьего блока (адаптивный с использованием dppx) */
+.item-2 {
+  font-size: 1em; /* относительно родительского размера шрифта */
+  padding: 1.2em;
+  background-color: lightcoral;
+}
+
+/* Медиазапросы для высокой плотности пикселей */
+@media only screen and (min-resolution: 2dppx) {
+  .item-2 {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
+}
+
+@media only screen and (min-resolution: 3dppx) {
+  .item-2 {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+  }
+}
